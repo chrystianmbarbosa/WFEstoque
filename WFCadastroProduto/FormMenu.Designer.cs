@@ -34,8 +34,12 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(358, 243);
+            ClientSize = new Size(300, 233);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormMenu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormMenu";
             ResumeLayout(false);
         }
