@@ -16,5 +16,10 @@ namespace WFCadastroProduto
         {
             InitializeComponent();
         }
+
+        private void menuSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
