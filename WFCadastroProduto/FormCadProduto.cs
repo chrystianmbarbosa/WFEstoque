@@ -54,13 +54,25 @@ namespace WFCadastroProduto
             prod.Status = rdbAtivo.Checked ? EStatus.Ativo : EStatus.Inativo;
             Produto.ListaProdutos.Add(prod);
 
-            MessageBox.Show("Produto Cadastrado com Sucesso!",
-                "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (prod.Cadastrar() == true)
+            {
+                MessageBox.Show("Produto Cadastrado com Sucesso!",
+               "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            LimparCampos();
+                LimparCampos();
 
-            FormListaProduto form = new FormListaProduto();
-            form.ShowDialog();
+                FormListaProduto form = new FormListaProduto();
+                form.ShowDialog();
+            }
+            else
+            {
+                Erro("Produto Não Inserido no BD!");
+            }
+
+
+
+
+
 
         }
 

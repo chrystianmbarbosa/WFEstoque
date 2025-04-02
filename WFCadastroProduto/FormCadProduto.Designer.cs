@@ -148,6 +148,7 @@
             // 
             // mskCodigo
             // 
+            mskCodigo.Enabled = false;
             mskCodigo.Location = new Point(25, 34);
             mskCodigo.Mask = "0000";
             mskCodigo.Name = "mskCodigo";
@@ -187,7 +188,7 @@
 
         #endregion
 
-        
+
         private Label lblCodigo;
         private Label lblNome;
         private TextBox txtNome;
