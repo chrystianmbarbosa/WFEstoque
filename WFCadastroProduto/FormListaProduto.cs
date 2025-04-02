@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace WFCadastroProduto
 {
-    public partial class FormMenu : Form
+    public partial class FormListaProduto : Form
     {
-        public FormMenu()
+        public FormListaProduto()
         {
             InitializeComponent();
         }
 
-        private void menuSair_Click(object sender, EventArgs e)
+        private void FormListaProduto_Load(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void menuCadastrar_Click(object sender, EventArgs e)
-        {
-            FormCadProduto form = new FormCadProduto();
-            form.ShowDialog();
+            dgvListaProdutos.DataSource =
+                Produto.ListaProdutos;
         }
     }
 }

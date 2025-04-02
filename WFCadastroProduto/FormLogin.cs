@@ -51,5 +51,12 @@ namespace WFCadastroProduto
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnLogar_Click(sender, e);
+            }
+        }
     }
 }

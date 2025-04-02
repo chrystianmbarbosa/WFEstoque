@@ -42,12 +42,39 @@ namespace WFCadastroProduto
         {
             if (NaoPreenchido() == true)
             {
-                Erro("Campos Obrigatórios não foram Preenchidos");
+                Erro("Campos Obrigatórios não foram Preenchidos!");
                 return;
             }
 
-            //Começo a cadastrar o meu objeto
+            Produto prod = new Produto();
+            prod.Id = long.Parse(mskCodigo.Text);
+            prod.Nome = txtNome.Text;
+            prod.Preco = nudPreco.Value;
+            prod.Quantidade = (int)nudQuantidade.Value;
+            prod.Status = rdbAtivo.Checked ? EStatus.Ativo : EStatus.Inativo;
+            Produto.ListaProdutos.Add(prod);
 
+            MessageBox.Show("Produto Cadastrado com Sucesso!",
+                "OK!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            LimparCampos();
+
+            FormListaProduto form = new FormListaProduto();
+            form.ShowDialog();
+
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            rdbAtivo.Checked = false;
+            rdbInativo.Checked = false;
+            nudPreco.Value = 0;
+            nudQuantidade.Value = 0;
+
+            int totalLista = Produto.ListaProdutos.Count;
+            int novoCodigo = totalLista + 1;
+            mskCodigo.Text = novoCodigo.ToString("D4");
         }
 
         private void FormCadProduto_Load(object sender, EventArgs e)

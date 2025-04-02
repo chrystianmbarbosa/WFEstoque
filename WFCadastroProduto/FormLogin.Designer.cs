@@ -49,6 +49,7 @@
             txtSenha.PlaceholderText = "Informe Senha...";
             txtSenha.Size = new Size(100, 23);
             txtSenha.TabIndex = 1;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // btnLogar
             // 

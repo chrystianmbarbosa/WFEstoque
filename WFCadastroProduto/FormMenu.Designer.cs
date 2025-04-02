@@ -52,6 +52,7 @@
             menuCadastrar.Name = "menuCadastrar";
             menuCadastrar.Size = new Size(69, 20);
             menuCadastrar.Text = "Cadastrar";
+            menuCadastrar.Click += menuCadastrar_Click;
             // 
             // menuListar
             // 
